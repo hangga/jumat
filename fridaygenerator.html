@@ -6,93 +6,27 @@
 		  border-collapse: collapse;
 		}
 		td, th {
-			padding-left: 12px;
-			padding-top: 4px;
-			padding-bottom: 4px; 
+			padding-left: 4px;
+			padding-top: 1px;
+			padding-bottom: 1px; 
 			padding-right: 4px; 
 
-		  	border: 1px solid orange;
+		  	border: 0.1px solid gray;
 		}
 	</style>
 </head>
 <body onload="initialize()" style="margin-left:20px;">
 	<h2>Daftar Hari Jumat dalam satu tahun</h2>
-	Tahun <select id="selyear">
-	</select> <span/> <button onclick="generatefriday()">Generate</button>
+	Tahun <select id="selyear"></select> 
+			<span/> 
+		<button onclick="generatefriday()">Generate</button>
+		<button onclick="replaceInner()">Simpan</button>
 	<br/><br/>
-	<table id="myTable" width="400">
+	<table id="khotibTable">
 		<div id="divkonten"></div>  
 	</table>
 	
 
-    <script>
-    	var pasaran = new Array('Legi','Pahing','Pon','Wage','Kliwon');
-	    var bulan = ['Januari', 'Februari', 'Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-
-	    var thisYear = new Date().getFullYear();
-	    var selyear = document.getElementById('selyear');
-
-	    function initialize(){
-	    	
-	    	for (var i = thisYear - 5; i <= thisYear + 5; i++){
-	    		var opt = document.createElement('option');
-		    	
-		    	opt.appendChild( document.createTextNode(i) );
-				opt.value = i; 
-				selyear.appendChild(opt); 
-	    	}
-	    	selyear.value = thisYear;
-	    }
-
-
-    	function generatefriday(){
-    		var table = document.getElementById("myTable");
-    		
-    		var rowCount = table.rows.length;
-	        for (var i = rowCount - 1; i >= 0; i--) {
-	            table.deleteRow(i);
-	        }
-
-    		var row = table.insertRow(-1);
-					var cell1 = row.insertCell(0);
-					var cell2 = row.insertCell(1);
-					cell1.innerHTML = "<h3>Tanggal<h3/>";
-					cell2.innerHTML = "<h3>Pasaran<h3/>";
-
-    		var currentValue = parseInt(selyear.options[selyear.selectedIndex].value);
-    	
-    		var d2 = new Date("2014/01/27");
-	    	
-	        var x = new Date();
-	       	//set the financial year starting date
-	        x.setFullYear(currentValue, 00, 01);
-
-	       	//set the next financial year starting date
-	        var y = new Date();
-	        y.setFullYear(currentValue + 1, 00, 01);
-	        var j = 1;
-	        var count = 0;
-
-	      	//getting the all fridays in a financial year
-	        for ( var i = 0; x < y; i += j) {
-	            if (x.getDay() == 5) {
-	            	var selisih = Math.floor(Math.abs(x-d2)/86400000);
-						               
-	                var row = table.insertRow(-1);
-					var cell1 = row.insertCell(0);
-					var cell2 = row.insertCell(1);
-					cell1.innerHTML = x.getDate() + " "+ (bulan[x.getMonth()]) + " " + (x.getFullYear());
-					cell2.innerHTML = pasaran[selisih%5];
-
-	                x = new Date(x.getTime() + (7 * 24 * 60 * 60 * 1000));
-	                j = 7;
-	                count++;
-	            } else {
-	                j = 1;
-	                x = new Date(x.getTime() + (24 * 60 * 60 * 1000));
-	            }
-	        }
-    	}
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
