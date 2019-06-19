@@ -1,17 +1,16 @@
+
 var pasaran = new Array('Legi', 'Pahing', 'Pon', 'Wage', 'Kliwon');
 var bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-var khatib;
+var khatib = ["",""];
 
 var thisYear = new Date().getFullYear();
 var selyear = document.getElementById('selyear');
 var nomor;
 
 function initialize() {
-
     for (var i = thisYear - 5; i <= thisYear + 5; i++) {
         var opt = document.createElement('option');
-
         opt.appendChild(document.createTextNode(i));
         opt.value = i;
         selyear.appendChild(opt);
@@ -24,15 +23,23 @@ function toast(thiselement) {
     alert(thiselement.value);
 }
 
-function replaceInner() {
+function clearcache(){
+    khatib = ["",""];
+    for (var i = 1; i <= nomor; i++){
+        document.getElementById("editN" + i.toString()).value = "";
+    }
+}
+
+function saveData() {
     for (var i = 1; i <= nomor; i++) {
         var divNn = document.getElementById("div" + i.toString());
         var editNn = document.getElementById("editN" + i.toString());
         divNn.innerHTML = editNn.value;
+        khatib[i] = editNn.value;
     }
 }
 
-function generatefriday() {
+function generate() {
     nomor = 0;
     var khotibTable = document.getElementById("khotibTable");
 
@@ -47,20 +54,17 @@ function generatefriday() {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     
+    //Initialize header
     cell1.innerHTML = "<h3>No.<h3/>";
     cell1.style['width'] = '20px';
-
     cell2.innerHTML = "<h3>Tanggal<h3/>";
     cell2.style['width'] = '200px';
-
     cell3.innerHTML = "<h3>Pasaran<h3/>";
     cell3.style['width'] = '150px';
-
     cell4.innerHTML = "<h3>Imam dan Khotib<h3/>";
     cell4.style['width'] = '300px';
 
     var currentValue = parseInt(selyear.options[selyear.selectedIndex].value);
-
     var d2 = new Date("2014/01/27");
 
     //initialize starting date
@@ -75,7 +79,6 @@ function generatefriday() {
     var count = 0;
 
     //getting the all fridays in a financial year
-
     for (var i = 0; x < y; i += j) {
         if (x.getDay() == 5) {
             nomor++;
@@ -98,6 +101,9 @@ function generatefriday() {
             var editN = document.createElement("input");
             editN.setAttribute("id", "editN" + nomor);
             editN.style['width'] = '300px';
+            if(khatib[nomor] !== null && khatib[nomor] !== '' && khatib[nomor] !== undefined) {
+                editN.value = khatib[nomor];
+            }
             divN.appendChild(editN);
 
             x = new Date(x.getTime() + (7 * 24 * 60 * 60 * 1000));
