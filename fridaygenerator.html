@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<style type="text/css">
-		table {
-		  border-collapse: collapse;
-		}
-		td, th {
-			padding-left: 4px;
-			padding-top: 1px;
-			padding-bottom: 1px; 
-			padding-right: 4px; 
-
-		  	border: 0.1px solid gray;
-		}
-	</style>
-</head>
-<body onload="initialize()" style="margin-left:20px;">
-	<h2>Daftar Hari Jumat dalam satu tahun</h2>
-	Tahun <select id="selyear"></select> 
-			<span/> 
-		<button onclick="generatefriday()">Generate</button>
-		<button onclick="replaceInner()">Simpan</button>
-	<br/><br/>
-	<table id="khotibTable">
-		<div id="divkonten"></div>  
-	</table>
-	
-
-    <script src="script.js"></script>
-</body>
+   <head>
+      <style type="text/css">
+         table {
+         border-collapse: collapse;
+         }
+         td, th {
+         padding-left: 4px;
+         padding-top: 1px;
+         padding-bottom: 1px; 
+         padding-right: 4px; 
+         border: 0.1px solid gray;
+         }
+      </style>
+   </head>
+   <body onload="initialize()" style="margin-left:40px;">
+      <h2>Daftar Hari Jumat dalam satu tahun</h2>
+      Tahun <select id="selyear"></select> 
+      <span/> 
+      <button onclick="generate()">Generate</button>
+      <button onclick="saveData()">Simpan</button>
+      <button onclick="clearcache()">Clear Cache</button>
+      <br/><br/>
+      <table id="khotibTable"></table>
+      <script src="script.js"></script>
+   </body>
 </html>
+
