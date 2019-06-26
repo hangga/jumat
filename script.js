@@ -2,7 +2,7 @@
 var pasaran = new Array('Legi', 'Pahing', 'Pon', 'Wage', 'Kliwon');
 var bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-var khatib = ["",""];
+var khatib = [""];
 
 var thisYear = new Date().getFullYear();
 var selyear = document.getElementById('selyear');
@@ -24,13 +24,18 @@ function toast(thiselement) {
 }
 
 function clearcache(){
+    var btnGenerate = document.getElementById("btnGenerate");
+    btnGenerate.innerHTML = "Generate";
     khatib = ["",""];
     for (var i = 1; i <= nomor; i++){
         document.getElementById("editN" + i.toString()).value = "";
     }
+    
 }
 
 function saveData() {
+    var btnGenerate = document.getElementById("btnGenerate");
+    btnGenerate.innerHTML = "Edit";
     for (var i = 1; i <= nomor; i++) {
         var divNn = document.getElementById("div" + i.toString());
         var editNn = document.getElementById("editN" + i.toString());
