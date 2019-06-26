@@ -15,15 +15,17 @@
       </style>
    </head>
    <body onload="initialize()" style="margin-left:40px;">
-      <h2>Daftar Hari Jumat dalam satu tahun</h2>
+      <h3>Memeng gawe jadwal Khatib kanti cara manual</h3>
       Tahun <select id="selyear"></select> 
       <span/> 
-      <button onclick="generate()">Generate</button>
-      <button onclick="saveData()">Simpan</button>
-      <button onclick="clearcache()">Clear Cache</button>
+      <button id="btnGenerate" onclick="generate()">Generate</button>
+      <button onclick="saveData()">Save</button>
+      <button onclick="clearcache()">Clear</button>
+      <input type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
       <br/><br/>
       <table id="khotibTable"></table>
-      <script src="script.js"></script>
    </body>
+   <script src="script.js"></script>
+   <script src="tableToExcel.js"></script>
 </html>
 
