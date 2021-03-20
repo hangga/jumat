@@ -9,13 +9,18 @@ var selyear = document.getElementById('selyear');
 var nomor;
 
 function initialize() {
-    for (var i = thisYear - 5; i <= thisYear + 5; i++) {
+    for (var i = thisYear-1; i <= thisYear + 10; i++) {
         var opt = document.createElement('option');
         opt.appendChild(document.createTextNode(i));
         opt.value = i;
         selyear.appendChild(opt);
-    }
+    }btnExport
     selyear.value = thisYear;
+
+
+    document.getElementById('btnSave').style.display = "none";
+    document.getElementById('btnClear').style.display = "none";
+    document.getElementById('btnExport').style.display = "none";
 }
 
 
@@ -34,6 +39,11 @@ function clearcache(){
 }
 
 function saveData() {
+    document.getElementById('btnGenerate').style.display = "block";
+    document.getElementById('btnClear').style.display = "none";
+    document.getElementById('btnSave').style.display = "none";
+    document.getElementById('btnExport').style.display = "block";
+
     var btnGenerate = document.getElementById("btnGenerate");
     btnGenerate.innerHTML = "Edit";
     for (var i = 1; i <= nomor; i++) {
@@ -45,6 +55,14 @@ function saveData() {
 }
 
 function generate() {
+    document.getElementById('selyear').style.display = "none";
+    document.getElementById('btnGenerate').style.display = "none";
+    document.getElementById('btnSave').style.display = "block";
+    document.getElementById('btnClear').style.display = "block";
+    document.getElementById('btnExport').style.display = "none";
+    //document.getElementById('btnExport').style.display = "block";
+
+
     nomor = 0;
     var khotibTable = document.getElementById("khotibTable");
 

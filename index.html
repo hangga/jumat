@@ -12,16 +12,19 @@
          padding-right: 4px; 
          border: 0.1px solid gray;
          }
+         button, select {
+            float: left;
+         }
       </style>
    </head>
    <body onload="initialize()" style="margin-left:40px;">
-      <h3>Memeng gawe jadwal Khatib kanti cara manual</h3>
-      Tahun <select id="selyear"></select> 
-      <span/> 
+      <h3>Generator Form Tabel Jadwal Khatib</h3>
+      <select id="selyear"></select> 
+       
       <button id="btnGenerate" onclick="generate()">Generate</button>
-      <button onclick="saveData()">Save</button>
-      <button onclick="clearcache()">Clear</button>
-      <input type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
+      <button id="btnSave" onclick="saveData()">Save</button>
+      <button id="btnClear" onclick="clearcache()">Clear</button>
+      <input id="btnExport" type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
       <br/><br/>
       <table id="khotibTable"></table>
    </body>
