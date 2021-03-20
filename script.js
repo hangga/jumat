@@ -21,6 +21,14 @@ function initialize() {
     document.getElementById('btnSave').style.display = "none";
     document.getElementById('btnClear').style.display = "none";
     document.getElementById('btnExport').style.display = "none";
+    document.getElementById('btnReload').style.display = "none";
+
+}
+
+
+function reloadpage(){
+    var r = confirm("Memuat ulang halaman dari awal ?!");
+    if (r) window.location.reload();
 }
 
 
@@ -29,12 +37,18 @@ function toast(thiselement) {
 }
 
 function clearcache(){
-    var btnGenerate = document.getElementById("btnGenerate");
-    btnGenerate.innerHTML = "Generate";
-    khatib = ["",""];
-    for (var i = 1; i <= nomor; i++){
-        document.getElementById("editN" + i.toString()).value = "";
+    var r = confirm("Kosongkan data?!");
+
+    if (r){
+        var btnGenerate = document.getElementById("btnGenerate");
+        btnGenerate.innerHTML = "Generate";
+        khatib = ["",""];
+        for (var i = 1; i <= nomor; i++){
+            document.getElementById("editN" + i.toString()).value = "";
+        }
     }
+
+    
     
 }
 
@@ -60,7 +74,7 @@ function generate() {
     document.getElementById('btnSave').style.display = "block";
     document.getElementById('btnClear').style.display = "block";
     document.getElementById('btnExport').style.display = "none";
-    //document.getElementById('btnExport').style.display = "block";
+    document.getElementById('btnReload').style.display = "block";
 
 
     nomor = 0;

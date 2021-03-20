@@ -18,13 +18,15 @@
       </style>
    </head>
    <body onload="initialize()" style="margin-left:40px;">
-      <h3>Generator Form Tabel Jadwal Khatib</h3>
+      <h3>Jemuwah Barokah</h3>
+      <p>Hanya tool sederhana untuk membantu mempermudah dalam menyusun jadwal khatib Jum'at.</p>
       <select id="selyear"></select> 
-       
-      <button id="btnGenerate" onclick="generate()">Generate</button>
-      <button id="btnSave" onclick="saveData()">Save</button>
-      <button id="btnClear" onclick="clearcache()">Clear</button>
+      <button id="btnReload" onClick="reloadpage();">Reset</button>
+      <button id="btnGenerate" onclick="generate()">Mulai</button>
+      <button id="btnSave" onclick="saveData()">Simpan</button>
+      <button id="btnClear" onclick="clearcache()">Kosongkan</button>
       <input id="btnExport" type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
+      
       <br/><br/>
       <table id="khotibTable"></table>
    </body>
