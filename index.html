@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <style type="text/css">
-         table {
-         border-collapse: collapse;
-         }
-         td, th {
-         padding-left: 4px;
-         padding-top: 1px;
-         padding-bottom: 1px; 
-         padding-right: 4px; 
-         border: 0.1px solid gray;
-         font-size: 16px;
-         }
-         button, select {
-            float: left;
-         }
-         p{
-            font-size: 18px;
-         }
-      </style>
+      <link rel="stylesheet" href="style.css">
    </head>
    <body onload="initialize()" style="margin-left:40px;">
+      <div class="table-wrapper"></div>
       <h3>Jemuwah Barokah</h3>
       <p style="width: 800px;">Hanya tool sederhana untuk membantu mempermudah dalam menyusun jadwal khatib Jum'at.<br/>
       Tinggal pilih tahun, lalu klik tombol mulai.</p>
@@ -33,7 +16,7 @@
       <input id="btnExport" type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
       
       <br/><br/>
-      <table id="khotibTable"></table>
+      <table id="khotibTable" class="fl-table"></table>
    </body>
    <script src="script.js"></script>
    <script src="tableToExcel.js"></script>
