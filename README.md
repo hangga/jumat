@@ -1,5 +1,5 @@
 # Jemuwah Barokah
-Tool sederhana untuk membantu mempermudah dalam menyusun jadwal khatib Jum'at.
+Tool sederhana untuk membantu mempermudah Takmir Masjid dalam menyusun jadwal khatib Jum'at.
 # LIVE DEMO   
 [Link menuju tekape](https://hangga.github.io/jumat/)
 # Screen Shot
