@@ -1,0 +1,107 @@
+// I use SASS ok, don't judge.
+// Plus, it's way better.
+
+// Project Variables
+$project-font: 'Fira Sans'
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans)
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans)
+@import url(https://fonts.googleapis.com/css?family=Montserrat)
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans)
+
+// Color Variables
+$green-jade: #468966
+$yellow-bright: #FFF0A5
+$orange-light: #FFB03B
+$orange-dark: #FD7400
+$red-gentle: #B64926
+$red-light: #E74C3C
+$red-harsh: #8E2800
+$blue-navy: #2C3E50
+$white-imperfect: #ECF0F1
+$blue-sky: #3498DB
+$blue-darksky: #2980B9
+$teal: #1F8A70
+$green-hazard: #BEDB39
+$yellow-banana: #FFE11A
+$pink-hot: #F2385A
+$pink-gentle: #D95B5B
+$blue-lighter: #4AD9D9
+$blue-light: #36B1BF
+$brown-wooddark: #D95B5B
+$brown-wood: #BF8A49
+$brown-woodlight: #F2CA80
+$skin-base: #FFC794
+$skin-pale: #FADBAE
+$skin-tan1: #FFA16D
+$skin-tan2: #E87551
+$skin-tan3: #FF7865
+$purple-dark: #5C2849
+$gold-light: #FFDA66
+$gold-dark: #FFCC33
+$metal-iron: #EFEFEF
+$metal-irondark: #5F5F5F
+$metal-silver: #BFBFBF
+$metal-dark: #2F2F2F
+
+body, html
+  margin: 0
+  padding: 0
+  background: $white-imperfect
+  font-family: $project-font
+  text-align: center
+  
+  .canvas
+    width: 600px
+    height: 400px
+    background-color: white
+    margin-left: auto
+    margin-right: auto
+    box-shadow: 0px 0px 20px 1px #bbb
+    
+  .foot-wrapper
+    color: $metal-silver
+    float: left
+    poisition: absoulte
+    
+    .footer
+      margin-top: 100vh
+      margin-left: 20px
+      
+// Actual Styling
+.buttons
+  text-align: center
+  margin-left: auto
+  margin-right: auto
+a
+  text-decoration: none
+  color: white
+  width: 200px
+  height: 100px
+  background: $pink-hot
+  position: relative
+  margin: 30px
+  top: 100px
+  padding: 16px
+  font-size: 50px
+  border-radius: 10px
+  box-shadow: 0px 15px 0px 0px darken($pink-hot, 5%), 0px 0px 20px 0px #bbb
+
+  transition: all 0.2s
+  
+a:active
+  top: 108px  
+  box-shadow: 0px 7px 0px 0px darken($pink-hot, 5%)
+
+.button1
+  background-color: $pink-hot
+.button2
+  background-color: $blue-sky
+  box-shadow: 0px 15px 0px 0px darken($blue-sky, 5%)
+  &:active
+    box-shadow: 0px 7px 0px 0px darken($blue-sky, 5%)
+     
+    
+
+    

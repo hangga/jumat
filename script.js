@@ -144,7 +144,10 @@ function generate() {
 
             var editN = document.createElement("input");
             editN.setAttribute("id", "editN" + nomor);
-            editN.style['width'] = '300px';
+            editN.placeholder = "Nama khotib.."; 
+            editN.style['width'] = '90%';
+            editN.style['height'] = '38px';
+            
             if(khatib[nomor] !== null && khatib[nomor] !== '' && khatib[nomor] !== undefined) {
                 editN.value = khatib[nomor];
             }
@@ -257,3 +260,4 @@ function writeIslamicDate(date, adjustment) {
     var outputIslamicDate = /*wdNames[iDate[4]] + ", " +*/ iDate[5] + " " + iMonthNames[iDate[6]] + " " + iDate[7];
     return outputIslamicDate;
 }
+

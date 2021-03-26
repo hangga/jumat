@@ -2,18 +2,19 @@
 <html>
    <head>
       <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="btn.css">
    </head>
    <body onload="initialize()" style="margin-left:40px;">
       <div class="table-wrapper"></div>
-      <h3>Jemuwah Barokah</h3>
+      <h1>Jemuwah Barokah</h1>
       <p style="width: 800px;">Hanya tool sederhana untuk membantu mempermudah dalam menyusun jadwal khatib Jum'at.<br/>
       Tinggal pilih tahun, lalu klik tombol mulai.</p>
-      <select id="selyear"></select> 
-      <button id="btnReload" onClick="reloadpage();">Reset</button>
-      <button id="btnGenerate" onclick="generate()">Mulai</button>
-      <button id="btnSave" onclick="saveData()">Simpan</button>
-      <button id="btnClear" onclick="clearcache()">Kosongkan</button>
-      <input id="btnExport" type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
+      <select class="select" placeholder="Pilih Tahun" id="selyear"></select>
+      <button class="action-button shadow animate green" id="btnReload" onClick="reloadpage();">Reset</button>
+      <button class="action-button shadow animate green" id="btnGenerate" onclick="generate()">Mulai</button>
+      <button class="action-button shadow animate green" id="btnSave" onclick="saveData()">Simpan</button>
+      <button class="action-button shadow animate green" id="btnClear" onclick="clearcache()">Kosongkan</button>
+      <input class="action-button shadow animate green" id="btnExport" type="button" onclick="tableToExcel('khotibTable', 'Jadwal Khotib')" value="Export to Excel">
       
       <br/><br/>
       <table id="khotibTable" class="fl-table"></table>
